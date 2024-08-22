@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Propuesta</title>
+    <link rel="stylesheet" href="js/bootstrap.min.css" />
+    <link rel="stylesheet" href="estilos.css">
+    <script type="text/javascript">
+        window.onload = function () {
+            Swal.fire({
+                title: '¿Quieres ver lo que tengo para ti?',
+                text: "Esto es para ti espero digas que si!",
+                imageUrl: 'img/hinata.jpg',
+                imageWidth: 200,
+                imageHeight: 200,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Go!'
+            }).then((result) => {
+                if (result.value) {
+                    document.getElementById('miaudio').play();
+                }
+            })
+        }
+        function cambio() {
+            var btn2 = document.getElementById("btn2").value;
+            var btn1 = document.getElementById("btn1").value;
+
+            if (btn1 == "No") {
+                document.getElementById("btn1").value = "Si";
+                document.getElementById("btn2").value = "No";
+                document.getElementById("btn2").className = "btn btn-outline-danger";
+                document.getElementById("btn1").className = "btn btn-outline-success";
+            }
+
+        }
+        function cambiar() {
+            var btn2 = document.getElementById("btn2").value;
+            var btn1 = document.getElementById("btn1").value;
+
+            if (btn2 == "No") {
+                document.getElementById("btn2").value = "Si";
+                document.getElementById("btn1").value = "No";
+                document.getElementById("btn1").className = "btn btn-outline-danger";
+                document.getElementById("btn2").className = "btn btn-outline-success";
+            }
+
+        }
+        function rspta() {
+            Swal.fire({
+                title: '¡ya decia yo que si!',
+                text: "day happy!!!",
+                imageUrl: 'img/fin.png',
+                imageWidth: 500,
+                showConfirmButton: false
+            })
+        }   
+    </script>
+</head>
+
+<body>
+    <section>
+        <div class="card bg-white row">
+            <div class="imgBx">
+                <img src="img/naruto.jpg" alt="loading">
+            </div>
+            <div class="card-body" style="padding-top: 60px;">
+
+                <h4 class="card-title text-dark text-center text-color-blue">¿Quieres ser my girlfriend 婚約者?</h4>
+
+                <div class="col-sm-12" style="text-align: center;">
+                    <input id="btn1" readonly value="Si" onmouseover="cambio()" onclick="rspta()" class="btn btn-outline-success"
+                        style="width: 180px; margin-right: 10px;">
+
+                    <input id="btn2" readonly value="No" onmouseover="cambiar()" onclick="rspta()" class="btn btn-outline-danger"
+                        style="width: 180px; margin-left: 10px;">
+                </div>
+
+            </div>
+        </div>
+        <div>
+            <audio src="audio/Blue-Bird.mp3" autoplay="autoplay" loop="infinite" id="miaudio">
+        </div>
+    </section>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery-3.4.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert2@9.js"></script>
+</body>
+
+</html>
